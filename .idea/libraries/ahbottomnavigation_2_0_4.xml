@@ -1,8 +1,5 @@
 <component name="libraryTable">
   <library name="ahbottomnavigation-2.0.4">
-    <ANNOTATIONS>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.aurelhubert/ahbottomnavigation/2.0.4/annotations.zip!/" />
-    </ANNOTATIONS>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.aurelhubert/ahbottomnavigation/2.0.4/res" />
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.aurelhubert/ahbottomnavigation/2.0.4/jars/classes.jar!/" />
