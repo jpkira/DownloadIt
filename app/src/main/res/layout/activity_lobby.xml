@@ -6,18 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/toolbar_title"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Download.It"
-        android:textAlignment="center"
-        android:background="#9b61b0"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:layout_gravity="center" />
+        android:padding="8dp"
+        android:background="#9B61B0">
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/toolbar_title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="DOWNLOAD.IT"
+            android:textSize="17sp"
+            android:textColor="@android:color/white"/>
+
+        <ImageView
+            android:layout_toRightOf="@id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/ic_logo"/>
+
+
+    </RelativeLayout>
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"

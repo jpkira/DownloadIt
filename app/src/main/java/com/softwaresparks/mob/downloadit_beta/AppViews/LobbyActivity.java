@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -78,6 +79,9 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
                 .add(R.id.fragmentArea, new FileFragment())
                 .commit();
 
+        View view = navigationView.findViewById(R.id.file_menu);
+        view.performClick();
+
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -116,6 +120,7 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
                         selectedFragment = new SettingsFragment();
                         break;
                 }
+
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragmentArea, selectedFragment)
