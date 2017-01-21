@@ -2,9 +2,6 @@ package com.softwaresparks.mob.downloadit_beta.AppViews;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,18 +9,9 @@ import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-
-import com.softwaresparks.mob.downloadit_beta.AppTransactions.OkHttpAT;
-import com.softwaresparks.mob.downloadit_beta.AppUtilities.ModelBucketResponse;
 import com.softwaresparks.mob.downloadit_beta.AppUtilities.OnGetBucketResponse;
 import com.softwaresparks.mob.downloadit_beta.AppUtilities.OnSetBucketRequest;
 import com.softwaresparks.mob.downloadit_beta.R;
-import com.stanfy.gsonxml.GsonXml;
-import com.stanfy.gsonxml.GsonXmlBuilder;
-import com.stanfy.gsonxml.XmlParserCreator;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserFactory;
 
 /**
  * Created by xLipse on 1/19/2017.
@@ -42,8 +30,7 @@ public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGet
     @TargetApi(23)
     protected void askPermissions() {
         String[] permissions = {
-                "android.permission.READ_EXTERNAL_STORAGE",
-                "android.permission.WRITE_EXTERNAL_STORAGE"
+                "android.permission.READ_EXTERNAL_STORAGE",                "android.permission.WRITE_EXTERNAL_STORAGE"
         };
         int requestCode = 200;
         requestPermissions(permissions, requestCode);
@@ -132,33 +119,14 @@ public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGet
 
     @Override
     public void setBucket(String req) {
-        if (req.equals("GET")) {
-            new OkHttpAT(LobbyActivity.this, "GET").execute();
-        }
+        //Get some output/data from File Fragment
+
     }
 
     @Override
     public void getBucket(String response) {
         this.response = response;
-
-        XmlParserCreator parserCreator = new XmlParserCreator() {
-            @Override
-            public XmlPullParser createParser() {
-                try {
-                    return XmlPullParserFactory.newInstance().newPullParser();
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        };
-
-        GsonXml gsonXml = new GsonXmlBuilder()
-                .setXmlParserCreator(parserCreator)
-                .create();
-
-        ModelBucketResponse model = gsonXml.fromXml(response, ModelBucketResponse.class);
-
-        msg(model.getContents().toString());
+        //Get some output/data from OkHttpAT
 
     }
 
