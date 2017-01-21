@@ -1,11 +1,12 @@
 package com.softwaresparks.mob.downloadit_beta.AppViews;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
+import android.support.v4.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ import com.softwaresparks.mob.downloadit_beta.R;
  * Created by xLipse on 1/19/2017.
  */
 
-public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGetBucketResponse {
+public class LobbyActivity extends AppCompatActivity implements OnSetBucketRequest, OnGetBucketResponse {
 
     private String response;
 
@@ -63,37 +64,55 @@ public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGet
 
         navigationView = (BottomNavigationView) findViewById(R.id.bottomBar);
 
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragmentArea, new FileFragment())
+                .commit();
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+
+                resetMenu();
+
                 switch (item.getItemId()) {
                     case R.id.file_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_files_select);
+                        selectedFragment = new FileFragment();
                         break;
 
                     case R.id.category_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_categories_select);
+                        selectedFragment = new CategoryFragment();
                         break;
 
                     case R.id.subscription_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_subscription_select);
+                        selectedFragment = new SubscriptionFragment();
                         break;
 
                     case R.id.help_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_help_select);
+                        selectedFragment = new HelpFragment();
                         break;
 
                     case R.id.settings_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_settings_select);
+                        selectedFragment = new SettingsFragment();
                         break;
                 }
-                return false;
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentArea, selectedFragment)
+                        .commit();
+
+                return true;
             }
         });
 

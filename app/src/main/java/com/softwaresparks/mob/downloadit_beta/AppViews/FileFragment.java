@@ -1,6 +1,6 @@
 package com.softwaresparks.mob.downloadit_beta.AppViews;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -49,7 +49,7 @@ public class FileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return null;
+        return inflater.inflate(R.layout.fragment_files, container, false);
 
     }
 

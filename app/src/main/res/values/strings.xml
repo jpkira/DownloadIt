@@ -34,4 +34,7 @@
 
     <string name="emptylist">No Files On Bucket Yet</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Category Fragment</string>
+
 </resources>

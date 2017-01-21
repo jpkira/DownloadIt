@@ -25,14 +25,15 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    testCompile 'junit:junit:4.12'
-    compile 'com.squareup.okhttp3:okhttp:3.5.0'
-    compile 'org.apache.directory.studio:org.apache.commons.codec:1.6'
     compile('com.stanfy:gson-xml-java:0.1.+') {
         exclude group: 'xmlpull', module: 'xmlpull'
     }
-    compile 'com.aurelhubert:ahbottomnavigation:2.0.4'
-    compile 'com.android.support:design:25.0.0'
 
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'org.apache.directory.studio:org.apache.commons.codec:1.6'
+    compile 'com.aurelhubert:ahbottomnavigation:2.0.4'
+    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
+    testCompile 'junit:junit:4.12'
 }
