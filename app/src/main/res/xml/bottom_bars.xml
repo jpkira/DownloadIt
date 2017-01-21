@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_files"
+        icon="@drawable/ic_files_normal"
+        title="Files" />
+    <tab
+        id="@+id/tab_categories"
+        icon="@drawable/ic_categories_normal"
+        title="Categories" />
+    <tab
+        id="@+id/tab_subscription"
+        icon="@drawable/ic_subscription_normal"
+        title="Subscription" />
+    <tab
+        id="@+id/tab_help"
+        icon="@drawable/ic_help_normal"
+        title="Help" />
+    <tab
+        id="@+id/tab_settings"
+        icon="@drawable/ic_settings_normal"
+        title="Settings" />
+</tabs>

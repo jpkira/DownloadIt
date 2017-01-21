@@ -4,10 +4,14 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.view.MenuItem;
 import android.widget.Toast;
+
 
 import com.softwaresparks.mob.downloadit_beta.AppTransactions.OkHttpAT;
 import com.softwaresparks.mob.downloadit_beta.AppUtilities.ModelBucketResponse;
@@ -28,6 +32,8 @@ import org.xmlpull.v1.XmlPullParserFactory;
 public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGetBucketResponse {
 
     private String response;
+
+    private BottomNavigationView navigationView;
 
     protected boolean shouldAskPermissions() {
         return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
@@ -64,6 +70,64 @@ public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGet
         FileFragment fileFragment = new FileFragment();
         fragmentTransaction.add(R.id.fragment_container, fileFragment).commit();**/
 
+        /**AHBottomNavigation bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottomBar);
+        AHBottomNavigationAdapter navigationAdapter = new AHBottomNavigationAdapter(LobbyActivity.this, R.menu.menu);
+        navigationAdapter.setupWithBottomNavigation(bottomNavigation);**/
+
+        navigationView = (BottomNavigationView) findViewById(R.id.bottomBar);
+
+
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.file_menu:
+                        resetMenu();
+                        item.setIcon(R.drawable.ic_files_select);
+                        break;
+
+                    case R.id.category_menu:
+                        resetMenu();
+                        item.setIcon(R.drawable.ic_categories_select);
+                        break;
+
+                    case R.id.subscription_menu:
+                        resetMenu();
+                        item.setIcon(R.drawable.ic_subscription_select);
+                        break;
+
+                    case R.id.help_menu:
+                        resetMenu();
+                        item.setIcon(R.drawable.ic_help_select);
+                        break;
+
+                    case R.id.settings_menu:
+                        resetMenu();
+                        item.setIcon(R.drawable.ic_settings_select);
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+
+
+    }
+
+    private void resetMenu() {
+        int[] drawables = {
+                R.drawable.ic_files_normal,
+                R.drawable.ic_categories_normal,
+                R.drawable.ic_subscription_normal,
+                R.drawable.ic_help_normal,
+                R.drawable.ic_settings_normal
+        };
+
+        for (int i = 0; i < navigationView.getMenu().size(); i++) {
+            MenuItem item = navigationView.getMenu().getItem(i);
+            item.setIcon(drawables[i]);
+        }
     }
 
     @Override

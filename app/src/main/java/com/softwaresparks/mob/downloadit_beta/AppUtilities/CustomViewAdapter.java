@@ -52,7 +52,7 @@ public class CustomViewAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.customview_filelist, viewGroup, false);
+        /*View row = inflater.inflate(R.layout.customview_filelist, viewGroup, false);
 
         ImageView thumbnail_img = (ImageView) row.findViewById(R.id.img_filethumbnail);
         ImageView link_img = (ImageView) row.findViewById(R.id.img_link);
@@ -90,6 +90,8 @@ public class CustomViewAdapter extends BaseAdapter {
 
         return row;
 
+        */
+        return null;
     }
 
     private class SingleRow {
