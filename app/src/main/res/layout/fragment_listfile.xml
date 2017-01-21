@@ -19,12 +19,12 @@
             android:id="@+id/layout_text">
 
             <TextView
-                android:text="@string/explorer_title"
+                android:text="Explorer"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/tv_explorer"
                 android:layout_weight="1"
-                android:textSize="@dimen/font_file_name"
+                android:textSize="15sp"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_marginRight="5dp" />
         </LinearLayout>

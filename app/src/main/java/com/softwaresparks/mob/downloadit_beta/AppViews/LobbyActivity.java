@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.softwaresparks.mob.downloadit_beta.AppUtilities.OnGetBucketResponse;
@@ -30,6 +32,7 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
     private BottomNavigationView navigationView;
     private Toolbar toolbar;
     private SearchView searchView = null;
+    private Spinner spinner = null;
 
     protected boolean shouldAskPermissions() {
         return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
@@ -66,6 +69,8 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
 
 
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
         getSupportFragmentManager()
@@ -119,10 +124,6 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
                 return true;
             }
         });
-
-
-
-
     }
 
     private void resetMenu() {
@@ -147,6 +148,13 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
         inflater.inflate(R.menu.toolbar_menu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
+        MenuItem spinnerItem = menu.findItem(R.id.action_spinner);
+
+        spinner = (Spinner) MenuItemCompat.getActionView(spinnerItem);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.language_array, android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         if(searchItem != null) {
             searchView = (SearchView) MenuItemCompat.getActionView(searchItem);

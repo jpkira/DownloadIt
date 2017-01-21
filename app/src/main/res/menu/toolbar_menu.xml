@@ -5,9 +5,15 @@
     <item
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_search_category_default"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView"
         android:title="Search" />
+
+    <item
+        android:id="@+id/action_spinner"
+        android:title="Language"
+        app:actionViewClass="android.widget.Spinner"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_settings"

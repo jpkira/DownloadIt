@@ -24,8 +24,8 @@
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="@dimen/icon_file_width"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 app:srcCompat="@drawable/ic_file_thumbnail"
                 android:id="@+id/img_filethumbnail"
                 android:layout_weight="1" />
@@ -52,7 +52,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/tv_filename"
                     android:layout_weight="15.25"
-                    android:textSize="@dimen/font_file_name"
+                    android:textSize="15sp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp" />
 
@@ -89,13 +89,13 @@
                 android:layout_weight="2">
 
                 <TextView
-                    android:text="@string/customview_path"
+                    android:text="Path"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/tv_filepath"
                     android:layout_weight="1"
                     android:gravity="center_vertical|center_horizontal"
-                    android:textSize="@dimen/font_file_path"
+                    android:textSize="15sp"
                     android:layout_marginLeft="5dp" />
             </LinearLayout>
         </LinearLayout>

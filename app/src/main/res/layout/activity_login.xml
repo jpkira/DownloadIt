@@ -32,13 +32,13 @@
             android:textSize="36sp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:fontFamily="sans-serif-black"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-thin"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:textAlignment="center"
             android:textSize="18sp"/>
     </LinearLayout>
@@ -55,12 +55,11 @@
             android:drawablePadding="-20dp"
             android:inputType="textPersonName"
             android:text=""
-            android:hint="@string/username"
-            android:textColorHint="@color/white"
+            android:hint="Username"
+            android:textColor="@android:color/white"
             android:ems="11"
             android:gravity="center"
             android:id="@+id/edtUsername"
-            android:textColor="@color/white"
             android:textSize="20sp"
             android:fontFamily="sans-serif-thin"
             />
@@ -74,10 +73,10 @@
             android:drawablePadding="-20dp"
             android:ems="10"
             android:id="@+id/edtPassword"
-            android:hint="@string/password"
+            android:hint="Password"
             android:gravity="center"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
             android:textSize="20sp"
             android:fontFamily="sans-serif-thin"
             android:layout_marginTop="10dp"/>
@@ -90,7 +89,7 @@
     <Button
         android:text="login"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:fontFamily="sans-serif-thin"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -109,7 +108,7 @@
         android:layout_height="wrap_content"
         android:text="Forget Password"
         android:background="@android:color/transparent"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:fontFamily="sans-serif-thin"
         android:textAllCaps="false"/>
     <Space
@@ -121,7 +120,7 @@
         android:layout_height="wrap_content"
         android:text="or login with"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:fontFamily="sans-serif-thin"/>
     <Space
         android:layout_width="match_parent"
@@ -140,7 +139,7 @@
             android:paddingStart="10dp"
             android:textAllCaps="false"
             android:background="@drawable/button_border"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:drawablePadding="-20dp"
@@ -153,7 +152,7 @@
             android:text="Google"
             android:textAlignment="center"
             android:background="@drawable/button_border"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:layout_width="0dp"
             android:fontFamily="sans-serif-thin"
             android:layout_height="40dp"
@@ -172,7 +171,7 @@
     <Button
         android:text="create an account"
         android:background="@android:color/transparent"
-        android:textColor="@color/white"
+        android:textColor="@android:color/white"
         android:fontFamily="sans-serif-thin"
         android:textAllCaps="false"
         android:layout_width="match_parent"
