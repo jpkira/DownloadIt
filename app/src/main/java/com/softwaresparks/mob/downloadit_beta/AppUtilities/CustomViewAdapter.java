@@ -22,15 +22,18 @@ public class CustomViewAdapter extends BaseAdapter {
 
     ArrayList<SingleRow> list;
 
-    public CustomViewAdapter(Context context, String[] filenames, String[] filepaths, String[] filesizes) {
+    CustomViewHolder viewHolder;
+
+    public CustomViewAdapter(Context context, String[] filenames, String[] filedate, String[] filesizes) {
 
         this.context = context;
 
         list = new ArrayList<SingleRow>();
 
         for (int i = 0; i < filenames.length; i++) {
-            list.add(new SingleRow(filenames[i], filepaths[i], filesizes[i]));
+            list.add(new SingleRow(filenames[i], filedate[i], filesizes[i]));
         }
+
 
     }
 
@@ -52,22 +55,44 @@ public class CustomViewAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        return null;
-    }
+        View row = view;
 
-    private class SingleRow {
-
-        String filename;
-        String filepath;
-        String filesize;
-
-        SingleRow(String filename, String filepath, String filesize) {
-            this.filename = filename;
-            this.filepath = filepath;
-            this.filesize = filesize;
+        if (row == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            row = inflater.inflate(R.layout.customview_filelist, viewGroup, false);
+            viewHolder = new CustomViewHolder(row);
+            row.setTag(viewHolder);
+        } else {
+            viewHolder = (CustomViewHolder) row.getTag();
         }
 
+        SingleRow temp = list.get(i);
+
+        viewHolder.filename_tv.setText(temp.filename);
+        viewHolder.filedate_tv.setText(temp.filedate);
+
+        viewHolder.link_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        viewHolder.send_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        viewHolder.delete_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        return row;
+
     }
-
-
 }

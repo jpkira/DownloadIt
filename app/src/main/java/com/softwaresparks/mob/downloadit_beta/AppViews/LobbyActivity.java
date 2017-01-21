@@ -31,7 +31,8 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
     @TargetApi(23)
     protected void askPermissions() {
         String[] permissions = {
-                "android.permission.READ_EXTERNAL_STORAGE",                "android.permission.WRITE_EXTERNAL_STORAGE"
+                "android.permission.READ_EXTERNAL_STORAGE",
+                "android.permission.WRITE_EXTERNAL_STORAGE"
         };
         int requestCode = 200;
         requestPermissions(permissions, requestCode);

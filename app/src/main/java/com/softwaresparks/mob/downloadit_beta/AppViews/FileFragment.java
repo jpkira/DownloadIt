@@ -28,9 +28,10 @@ public class FileFragment extends Fragment {
     ImageButton explorer_imgb;
     ListView files_lv;
 
-    private String filenames[] = null;
-    private String filepaths[] = null;
-    private String filesizes[] = null;
+    private String filenames[] = {"A","B"};
+    private String filedates[] = {"A","B"};
+    private String filesizes[] = {"A","B"};
+
 
     @Override
     public void onAttach(Context context) {
@@ -49,7 +50,17 @@ public class FileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_files, container, false);
+        View view;
+
+        view = inflater.inflate(R.layout.fragment_listfile, container, false);
+
+        explorer_tv = (TextView) view.findViewById(R.id.tv_explorer);
+        explorer_imgb = (ImageButton) view.findViewById(R.id.imgb_explorer);
+        files_lv = (ListView) view.findViewById(R.id.lv_files);
+
+        files_lv.setAdapter(new CustomViewAdapter(getActivity(), filenames, filedates, filesizes));
+
+        return view;
 
     }
 
