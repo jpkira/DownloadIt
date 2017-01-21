@@ -3,7 +3,6 @@ package com.softwaresparks.mob.downloadit_beta.AppTransactions;
 import android.util.Log;
 
 import com.softwaresparks.mob.downloadit_beta.AppViews.LobbyActivity;
-import com.softwaresparks.mob.downloadit_beta.AppViews.RawtestActivity;
 import com.softwaresparks.mob.downloadit_beta.R;
 
 import org.apache.commons.codec.binary.Base64;
@@ -25,7 +24,6 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class S3Authorization {
 
-    private RawtestActivity raw;
     private LobbyActivity lobby;
 
     private String url;
@@ -36,11 +34,6 @@ public class S3Authorization {
 
     public S3Authorization(LobbyActivity lobby) {
         this.lobby = lobby;
-        filetype = lobby.getResources().getString(R.string.filetype);
-    }
-
-    public S3Authorization(RawtestActivity raw) {
-        this.raw = raw;
         filetype = lobby.getResources().getString(R.string.filetype);
     }
 

@@ -51,46 +51,7 @@ public class CustomViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        /*View row = inflater.inflate(R.layout.customview_filelist, viewGroup, false);
 
-        ImageView thumbnail_img = (ImageView) row.findViewById(R.id.img_filethumbnail);
-        ImageView link_img = (ImageView) row.findViewById(R.id.img_link);
-        ImageView send_img = (ImageView) row.findViewById(R.id.img_send);
-        ImageView delete_img = (ImageView) row.findViewById(R.id.img_delete);
-        TextView filename_tv = (TextView) row.findViewById(R.id.tv_filename);
-        TextView filepath_tv = (TextView) row.findViewById(R.id.tv_filepath);
-
-        SingleRow tmp = list.get(i);
-
-        filename_tv.setText(tmp.filename);
-        filepath_tv.setText(tmp.filepath);
-
-
-        link_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        send_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        delete_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        return row;
-
-        */
         return null;
     }
 

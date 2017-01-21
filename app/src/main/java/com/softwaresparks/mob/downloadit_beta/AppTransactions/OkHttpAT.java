@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.softwaresparks.mob.downloadit_beta.AppUtilities.OnGetBucketResponse;
 import com.softwaresparks.mob.downloadit_beta.AppViews.LobbyActivity;
-import com.softwaresparks.mob.downloadit_beta.AppViews.RawtestActivity;
 import com.softwaresparks.mob.downloadit_beta.R;
 
 import java.io.File;
@@ -39,7 +38,6 @@ public class OkHttpAT extends AsyncTask<String, Integer, Integer> {
 
     private ContentResolver cr;
 
-    private RawtestActivity raw;
     private LobbyActivity lobby;
     private OkHttpClient pre_client;
     private Request request;
@@ -82,29 +80,6 @@ public class OkHttpAT extends AsyncTask<String, Integer, Integer> {
         pre_client = new OkHttpClient();
 
     }
-
-//    public OkHttpAT(RawtestActivity raw, String reqtyp) {
-//        clientInit(raw, reqtyp);
-//    }
-//
-//    public OkHttpAT(RawtestActivity raw, String reqtyp, Uri uri) {
-//        clientInit(raw, reqtyp);
-//        cr = lobby.getContentResolver();
-//        this.uri = uri;
-//    }
-//
-//    private void clientInit(RawtestActivity raw, String reqtyp) {
-//        this.raw = raw;
-//        this.reqtyp = reqtyp;
-//
-//        authorization = lobby.getResources().getString(R.string.auth);
-//        gmt_date = lobby.getResources().getString(R.string.gmtdate);
-//
-//        connectionSuccess = false;
-//
-//        pre_client = new OkHttpClient();
-//
-//    }
 
     @Override
     protected void onPreExecute() {
@@ -286,69 +261,3 @@ public class OkHttpAT extends AsyncTask<String, Integer, Integer> {
     }
 
 }
-
-
-
-
-
-
-
-    // ---------- Recyclers
-
-//    private OkHttpClient.Builder client;
-
-//    private void clientInit() {
-//        client = new OkHttpClient().newBuilder().authenticator(new Authenticator() {
-//            @Override
-//            public Request authenticate(Route route, Response response) throws IOException {
-//                Log.d(S3Constants.LOBBY_TAG, "Auth Respo = " + response);
-//                Log.d(S3Constants.LOBBY_TAG, "Challenges = " + response.challenges());
-//
-//                return response.request().newBuilder()
-//                        .addHeader("Authorization", authorization)
-//                        .addHeader("Date", gmt_date)
-//                        .build();
-//
-//            }
-//        });
-
-//              ----- first get -------
-//            try (Response response = client.build().newCall(request).execute()) {
-//                connectionSuccess = true;
-//
-//                Log.d(S3Constants.LOBBY_TAG, String.valueOf(response) + " ---- 1");
-//                body = response.body().string();
-//
-//                gmt_acquire = true;
-//                gmt_date = response.header("Date");
-//
-//            } catch (IOException e) {
-//                connectionSuccess = false;
-//                Log.d(S3Constants.LOBBY_TAG, String.valueOf(e));
-//
-//            }
-
-//              ----- second get -------
-//            try (Response response = client.build().newCall(request).execute()) {
-//                Log.d(S3Constants.LOBBY_TAG, String.valueOf(response) + " ---- 2");
-//                body = response.body().string();
-//                data_acquire = true;
-//
-//            } catch (IOException e) {
-//                Log.d(S3Constants.LOBBY_TAG, String.valueOf(e));
-//            }
-
-
-//              ---- ProgressBar ----
-//            Log.d(S3Constants.LOBBY_TAG, "Upload Sequence");
-//
-//            for (int i = 0; i < 100; i++) {
-//                publishProgress(i);
-//
-//                try {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException ie) {
-//                    Log.d(S3Constants.LOBBY_TAG, String.valueOf(ie));
-//                }
-//
-//            }

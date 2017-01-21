@@ -1,6 +1,6 @@
 package com.softwaresparks.mob.downloadit_beta.AppViews;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -49,31 +49,7 @@ public class FileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view;
-
-//        if (filenames.length == 0) {
-//
-//            onSetBucketRequest.setBucket("GET");
-//
-//            view = inflater.inflate(R.layout.fragment_emptyfile, container, false);
-//
-//            explorer_tv = (TextView) view.findViewById(R.id.tv_explorer);
-//            explorer_imgb = (ImageButton) view.findViewById(R.id.imgb_explorer);
-//            emptyfiles_tv = (TextView) view.findViewById(R.id.tv_emptyfiles);
-//
-//        } else {
-
-            view = inflater.inflate(R.layout.fragment_listfile, container, false);
-
-            explorer_tv = (TextView) view.findViewById(R.id.tv_explorer);
-            explorer_imgb = (ImageButton) view.findViewById(R.id.imgb_explorer);
-            files_lv = (ListView) view.findViewById(R.id.lv_files);
-
-//            files_lv.setAdapter(new CustomViewAdapter(getActivity(), filenames, filepaths, filesizes));
-
-//        }
-
-        return view;
+        return inflater.inflate(R.layout.fragment_files, container, false);
 
     }
 

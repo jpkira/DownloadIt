@@ -1,35 +1,24 @@
 package com.softwaresparks.mob.downloadit_beta.AppViews;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.graphics.drawable.Drawable;
+import android.support.v4.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-
-import com.softwaresparks.mob.downloadit_beta.AppTransactions.OkHttpAT;
-import com.softwaresparks.mob.downloadit_beta.AppUtilities.ModelBucketResponse;
 import com.softwaresparks.mob.downloadit_beta.AppUtilities.OnGetBucketResponse;
 import com.softwaresparks.mob.downloadit_beta.AppUtilities.OnSetBucketRequest;
 import com.softwaresparks.mob.downloadit_beta.R;
-import com.stanfy.gsonxml.GsonXml;
-import com.stanfy.gsonxml.GsonXmlBuilder;
-import com.stanfy.gsonxml.XmlParserCreator;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserFactory;
 
 /**
  * Created by xLipse on 1/19/2017.
  */
 
-public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGetBucketResponse {
+public class LobbyActivity extends AppCompatActivity implements OnSetBucketRequest, OnGetBucketResponse {
 
     private String response;
 
@@ -42,8 +31,7 @@ public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGet
     @TargetApi(23)
     protected void askPermissions() {
         String[] permissions = {
-                "android.permission.READ_EXTERNAL_STORAGE",
-                "android.permission.WRITE_EXTERNAL_STORAGE"
+                "android.permission.READ_EXTERNAL_STORAGE",                "android.permission.WRITE_EXTERNAL_STORAGE"
         };
         int requestCode = 200;
         requestPermissions(permissions, requestCode);
@@ -76,37 +64,55 @@ public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGet
 
         navigationView = (BottomNavigationView) findViewById(R.id.bottomBar);
 
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragmentArea, new FileFragment())
+                .commit();
 
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+
+                resetMenu();
+
                 switch (item.getItemId()) {
                     case R.id.file_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_files_select);
+                        selectedFragment = new FileFragment();
                         break;
 
                     case R.id.category_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_categories_select);
+                        selectedFragment = new CategoryFragment();
                         break;
 
                     case R.id.subscription_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_subscription_select);
+                        selectedFragment = new SubscriptionFragment();
                         break;
 
                     case R.id.help_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_help_select);
+                        selectedFragment = new HelpFragment();
                         break;
 
                     case R.id.settings_menu:
-                        resetMenu();
+
                         item.setIcon(R.drawable.ic_settings_select);
+                        selectedFragment = new SettingsFragment();
                         break;
                 }
-                return false;
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentArea, selectedFragment)
+                        .commit();
+
+                return true;
             }
         });
 
@@ -132,33 +138,14 @@ public class LobbyActivity extends Activity implements OnSetBucketRequest, OnGet
 
     @Override
     public void setBucket(String req) {
-        if (req.equals("GET")) {
-            new OkHttpAT(LobbyActivity.this, "GET").execute();
-        }
+        //Get some output/data from File Fragment
+
     }
 
     @Override
     public void getBucket(String response) {
         this.response = response;
-
-        XmlParserCreator parserCreator = new XmlParserCreator() {
-            @Override
-            public XmlPullParser createParser() {
-                try {
-                    return XmlPullParserFactory.newInstance().newPullParser();
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        };
-
-        GsonXml gsonXml = new GsonXmlBuilder()
-                .setXmlParserCreator(parserCreator)
-                .create();
-
-        ModelBucketResponse model = gsonXml.fromXml(response, ModelBucketResponse.class);
-
-        msg(model.getContents().toString());
+        //Get some output/data from OkHttpAT
 
     }
 
