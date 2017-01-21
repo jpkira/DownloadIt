@@ -10,16 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="631d38b5-859c-42c3-8a50-843c98e4f29e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppViews/RawtestActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_rawtest.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppTransactions/OkHttpAT.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppTransactions/OkHttpAT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppTransactions/S3Authorization.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppTransactions/S3Authorization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppUtilities/CustomViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppUtilities/CustomViewAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppViews/FileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppViews/FileFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppViews/LobbyActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/softwaresparks/mob/downloadit_beta/AppViews/LobbyActivity.java" />
-    </list>
+    <list default="true" id="631d38b5-859c-42c3-8a50-843c98e4f29e" name="Default" comment="" />
     <ignored path="DownloadIt-Beta.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
