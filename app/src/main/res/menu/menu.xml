@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/file_menu"
+        android:icon="@drawable/ic_files_normal"
+        android:title="Files"/>
+
+    <item
+        android:id="@+id/category_menu"
+        android:icon="@drawable/ic_categories_normal"
+        android:title="Category"/>
+
+    <item
+        android:id="@+id/subscription_menu"
+        android:icon="@drawable/ic_subscription_normal"
+        android:title="Subscription"/>
+
+    <item
+        android:id="@+id/help_menu"
+        android:icon="@drawable/ic_help_normal"
+        android:title="Help"/>
+
+    <item
+        android:id="@+id/settings_menu"
+        android:icon="@drawable/ic_settings_normal"
+        android:title="Settings"/>
+
+</menu>

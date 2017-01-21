@@ -1,0 +1,37 @@
+<resources>
+
+    <string name="app_logo">DOWNLOAD.IT</string>
+
+    <string name="app_name">DownloadIt-Beta</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+
+    <string name="app_title">DOWNLOAD.IT</string>
+
+    <string name="norespo">No Response</string>
+    <string name="httpget">HTTP GET</string>
+    <string name="httpput">HTTP PUT</string>
+
+    <string name="auth">No Authorization Yet.</string>
+    <string name="gmtdate">No GMT Date Yet.</string>
+    <string name="filetype">No FileType Yet</string>
+    <string name="objectfile">No Object Yet</string>
+
+    <string name="s3url">No URL Processed.</string>
+    <string name="s3presig">No Pre-Signature Processed.</string>
+    <string name="s3sig">No Signature Processed.</string>
+
+    <string name="tvfile">FILE</string>
+    <string name="tvCategory">CATEGORY</string>
+    <string name="tvSubscribe">SUBSCRIBE</string>
+    <string name="tvHelp">HELP</string>
+    <string name="tvSettings">SETTINGS</string>
+
+    <string name="customview_path">Path/path/path/path/path/path</string>
+    <string name="customview_filename">Filename</string>
+
+    <string name="explorer_title">My Files</string>
+
+    <string name="emptylist">No Files On Bucket Yet</string>
+
+</resources>
