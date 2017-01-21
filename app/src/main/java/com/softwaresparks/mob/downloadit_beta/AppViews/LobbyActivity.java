@@ -6,7 +6,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -23,6 +28,8 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
     private String response;
 
     private BottomNavigationView navigationView;
+    private Toolbar toolbar;
+    private SearchView searchView = null;
 
     protected boolean shouldAskPermissions() {
         return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
@@ -31,7 +38,8 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
     @TargetApi(23)
     protected void askPermissions() {
         String[] permissions = {
-                "android.permission.READ_EXTERNAL_STORAGE",                "android.permission.WRITE_EXTERNAL_STORAGE"
+                "android.permission.READ_EXTERNAL_STORAGE",
+                "android.permission.WRITE_EXTERNAL_STORAGE"
         };
         int requestCode = 200;
         requestPermissions(permissions, requestCode);
@@ -52,17 +60,13 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
             askPermissions();
         }
 
-        /**FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        FileFragment fileFragment = new FileFragment();
-        fragmentTransaction.add(R.id.fragment_container, fileFragment).commit();**/
-
-        /**AHBottomNavigation bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottomBar);
-        AHBottomNavigationAdapter navigationAdapter = new AHBottomNavigationAdapter(LobbyActivity.this, R.menu.menu);
-        navigationAdapter.setupWithBottomNavigation(bottomNavigation);**/
 
         navigationView = (BottomNavigationView) findViewById(R.id.bottomBar);
+        toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+
+
+        setSupportActionBar(toolbar);
+
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -134,6 +138,23 @@ public class LobbyActivity extends AppCompatActivity implements OnSetBucketReque
             MenuItem item = navigationView.getMenu().getItem(i);
             item.setIcon(drawables[i]);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+
+        inflater.inflate(R.menu.toolbar_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        if(searchItem != null) {
+            searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        }
+
+
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

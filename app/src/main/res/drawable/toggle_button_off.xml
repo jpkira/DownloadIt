@@ -2,6 +2,6 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/toggle_background_off"/>
     <item android:drawable="@drawable/white_toggle_icon"
-        android:right="28dp"
-        android:top="0.8dp"/>
+        android:right="14dp"
+        android:top="0.6dp"/>
 </layer-list>
