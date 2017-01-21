@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/toggle_background_off"/>
+    <item android:drawable="@drawable/white_toggle_icon"
+        android:right="28dp"
+        android:top="0.8dp"/>
+</layer-list>

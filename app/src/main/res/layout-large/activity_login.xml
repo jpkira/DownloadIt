@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="28"
+    android:weightSum="24"
     android:paddingLeft="70dp"
     android:paddingRight="70dp"
     android:background="@drawable/bg_login">
@@ -12,7 +12,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="4" />
+        android:layout_weight="2.26" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
-            android:textSize="36sp"
+            android:textSize="55sp"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/white"
@@ -41,7 +41,7 @@
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/white"
             android:textAlignment="center"
-            android:textSize="18sp"/>
+            android:textSize="25sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,7 +62,7 @@
             android:gravity="center"
             android:id="@+id/edtUsername"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:fontFamily="sans-serif-thin"
             />
 
@@ -79,9 +79,9 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:fontFamily="sans-serif-thin"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="30dp"/>
     </LinearLayout>
     <Space
         android:layout_width="match_parent"
@@ -93,9 +93,10 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:fontFamily="sans-serif-thin"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textSize="21sp"
+        android:layout_width="400dp"
+        android:layout_height="45dp"
+        android:textSize="35sp"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/button_border"
         android:id="@+id/button"
         />
@@ -112,6 +113,7 @@
         android:background="@android:color/transparent"
         android:textColor="@color/white"
         android:fontFamily="sans-serif-thin"
+        android:textSize="30sp"
         android:textAllCaps="false"/>
     <Space
         android:layout_width="match_parent"
@@ -121,6 +123,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="or login with"
+        android:textSize="28sp"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:fontFamily="sans-serif-thin"/>
@@ -146,6 +149,7 @@
             android:layout_height="40dp"
             android:drawablePadding="-20dp"
             android:layout_weight="0.5"
+            android:textSize="30sp"
             android:fontFamily="sans-serif-thin"
             android:id="@+id/button2" />
 
@@ -161,6 +165,7 @@
             android:layout_weight="0.5"
             android:id="@+id/button3"
             android:drawablePadding="-20dp"
+            android:textSize="30sp"
             android:textAllCaps="false"
             android:paddingStart="10dp" />
 
@@ -168,7 +173,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"/>
+        android:layout_weight="1.8"/>
 
     <Button
         android:text="create an account"
@@ -176,6 +181,7 @@
         android:textColor="@color/white"
         android:fontFamily="sans-serif-thin"
         android:textAllCaps="false"
+        android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView"/>
